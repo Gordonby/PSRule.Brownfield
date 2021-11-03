@@ -1,0 +1,44 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.202.5/containers/ubuntu
+{
+	"name": "Ubuntu",
+	"runArgs": ["--init"],
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
+		// Use hirsute or bionic on local arm64/Apple Silicon.
+		"args": { "VARIANT": "focal" }
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {},
+
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-vscode.azurecli",
+		"ms-azuretools.vscode-bicep",
+		"streetsidesoftware.code-spell-checker",
+		"ms-vscode.powershell",
+		"ms-azuretools.vscode-azureappservice",
+		"ms-vscode.azure-account",
+		"ms-azuretools.vscode-azurefunctions",
+		"ms-azuretools.vscode-azureresourcegroups"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	//"postStartCommand": "pwsh -Command Set-PSRepository -Name PSGallery -InstallationPolicy Trusted && pwsh -Command Install-Module -Name PSRule.Rules.Azure -Scope AllUsers -Repository PSGallery",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+	"features": {
+		"github-cli": "latest",
+		"azure-cli": "latest",
+		"powershell": "latest"
+	}
+}
