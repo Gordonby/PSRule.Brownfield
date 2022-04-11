@@ -22,3 +22,6 @@ $resultsFile = Join-Path $resultsPath -childpath "$(New-Guid).txt"
 $PSRuleResults = Invoke-PSRule -InputPath $templatePath -Module 'PSRule.Rules.Azure' -As Summary;
 $PSRuleResults | Out-File $resultsFile 
 Write-Output $PSRuleResults
+
+#Run a more detailed analysis
+Invoke-PSRule -InputPath $templatePath -Module 'PSRule.Rules.Azure' -As Detail;
